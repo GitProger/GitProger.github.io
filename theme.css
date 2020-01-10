@@ -13,4 +13,7 @@ body {
 
 hr {
     color: #333333;
+      background-color: #333333;
+      height: 2px;
+      border: none;
 }
