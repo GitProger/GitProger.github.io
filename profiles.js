@@ -1,4 +1,4 @@
-/// My accounts on differebt sites
+/// My accounts on different sites
 
 twitter = {
     name: "twitter.com",
