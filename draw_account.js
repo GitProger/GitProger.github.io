@@ -1,4 +1,3 @@
-
 function getCode(pro) {
      function quote(text) {
          return "\"" + text + "\"";
