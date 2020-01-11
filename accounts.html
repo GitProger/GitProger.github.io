@@ -12,11 +12,13 @@
             window.onload = function() {
                 document.body.innerHTML += "<br>"
                 document.body.innerHTML += "<center>"
-//                document.body.innerHTML += "<tr>";
+                document.body.innerHTML += "<table>";
+                document.body.innerHTML += "<tr>";
                 document.body.innerHTML += td_quote(getCode(twitter));
                 document.body.innerHTML += td_quote(getCode(vk));
                 document.body.innerHTML += td_quote(getCode(github));
-  //              document.body.innerHTML += "</tr>";
+                document.body.innerHTML += "</tr>";
+                document.body.innerHTML += "</table>";                
                 document.body.innerHTML += "</center>"
             }
         </script>
