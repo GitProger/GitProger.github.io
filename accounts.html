@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Me on different sites </title>
+        <script src="/profile.js"></script>
+        <script src="/profiles.js"></script>        
+        <script>
+        function td_quote(t) {
+            return "<td>" + t + "</td>";
+        }
+        window.onload = function() {
+            document.body.innerHTML += "<tr>";
+            document.body.innerHTML += td_quote(getCode(twitter));
+            document.body.innerHTML += td_quote(getCode(vk));
+            document.body.innerHTML += "</tr>";
+        }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
