@@ -2,18 +2,23 @@
 <html>
     <head>
         <title> Me on different sites </title>
+        <link href="theme.css" rel="stylesheet">
         <script src="/draw_account.js"></script>
         <script src="/profiles.js"></script>        
         <script>
-        function td_quote(t) {
-            return "<td>" + t + "</td>";
-        }
-        window.onload = function() {
-            document.body.innerHTML += "<tr>";
-            document.body.innerHTML += td_quote(getCode(twitter));
-            document.body.innerHTML += td_quote(getCode(vk));
-            document.body.innerHTML += "</tr>";
-        }
+            function td_quote(t) {
+                return "<td>" + t + "</td>";
+            }
+            window.onload = function() {
+                document.body.innerHTML += "<br>"
+                document.body.innerHTML += "<center>"
+                document.body.innerHTML += "<tr>";
+                document.body.innerHTML += td_quote(getCode(twitter));
+                document.body.innerHTML += td_quote(getCode(vk));
+                document.body.innerHTML += td_quote(getCode(github));
+                document.body.innerHTML += "</tr>";
+                document.body.innerHTML += "</center>"
+            }
         </script>
     </head>
     <body>
