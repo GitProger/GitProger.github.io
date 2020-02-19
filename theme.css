@@ -1,19 +1,19 @@
 darkgray {
-    color: #444444;
+    color: #444;
 }
 
 .darklink {
-    color: #555555;
+    color: #555;
 }
 
 body {
-    background: #222222;
-    color: #777777;
+    background: #333;
+    color: #777;
 }
 
 hr {
-    color: #333333;
-      background-color: #333333;
+    color: #444;
+      background-color: #333;
       height: 2px;
       border: none;
 }
