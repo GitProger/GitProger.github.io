@@ -55,7 +55,7 @@ function start() {
     var balls = [];
     var cnt = 10 + rand(91);
     for (var i = 0; i < cnt; i++) {
-        var b = new Ball(canvas, 5 + rand(6));
+        var b = new Ball(canvas, 10 + rand(11));
         balls.push(b);
     }
 
