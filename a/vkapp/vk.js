@@ -31,20 +31,39 @@ Ball.prototype.draw = function (ctx) {
 }
 
 
+
+function removeBall(canvas, event, balls) {
+    var rect = canvas.getBoundingClientRect();
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+    for (var i = 0; i < balls.length; i++) {
+        var dx = Math.abs(x - balls[i].x);
+        var dy = Math.abs(y - balls[i].y);
+        var dist = Math.sqrt(dx * dx + dy * dy)
+        if (dist <= balls[i].R) {
+            balls.splice(i, 1);
+            break;
+        }
+	}
+}
+
 function start() {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     var balls = [];
-
     var cnt = 10 + rand(91);
     for (var i = 0; i < cnt; i++) {
         var b = new Ball(canvas, 5 + rand(6));
         balls.push(b);
     }
 
-    var timeout = setInterval(function() { 
+    canvas.addEventListener("mousedown", function(e) {
+        removeBall(canvas, e, balls);
+    });
+
+    setInterval(function() { 
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         balls.forEach(
