@@ -93,5 +93,3 @@ function start() {
         );
     }, 20);
 }
-
-start();
