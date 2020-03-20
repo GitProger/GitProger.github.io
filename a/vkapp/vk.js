@@ -44,7 +44,7 @@ function removeBall(canvas, event, balls) {
             balls.splice(i, 1);
             break;
         }
-	}
+    }
 }
 
 function start() {
