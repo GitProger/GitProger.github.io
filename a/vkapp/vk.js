@@ -47,7 +47,10 @@ function removeBall(canvas, event, balls) {
     }
 }
 
-function start() {
+function start(
+             params = ["mousedown", "mousemove"] /* mobile optimal */
+             /* ["mousedown"] -- for desktop */
+         ) {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -59,14 +62,11 @@ function start() {
         balls.push(b);
     }
 
-    canvas.addEventListener("mousedown", function(e) {
-        removeBall(canvas, e, balls);
+    params.forEach(function (react) {
+        canvas.addEventListener(react, function(e) {
+            removeBall(canvas, e, balls);
+        });
     });
-
-    canvas.addEventListener("mousemove", function(e) {
-        removeBall(canvas, e, balls);
-    });
-
 
     var iters = 0;
     var timeout = setInterval(function() {
