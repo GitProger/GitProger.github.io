@@ -38,7 +38,7 @@ function start() {
 
     var balls = [];
 
-    var cnt = 3 + rand(18);
+    var cnt = 10 + rand(91);
     for (var i = 0; i < cnt; i++) {
         var b = new Ball(canvas, 5 + rand(6));
         balls.push(b);
