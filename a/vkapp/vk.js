@@ -31,31 +31,33 @@ Ball.prototype.draw = function (ctx) {
 }
 
 
+function start() {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+    var balls = [];
 
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+    var cnt = 3 + rand(18);
+    for (var i = 0; i < cnt; i++) {
+        var b = new Ball(canvas, 5 + rand(6));
+        balls.push(b);
+    }
 
-var balls = [];
-
-var cnt = 3 + rand(18);
-for (var i = 0; i < cnt; i++) {
-    var b = new Ball(canvas, 5 + rand(6));
-    balls.push(b);
+    var timeout = setInterval(function() { 
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        balls.forEach(
+            function (ball) {
+                ball.move();
+            }
+        );
+        balls.forEach(
+            function (ball) {
+                ball.draw(ctx);
+            }
+        );
+    }, 20);
 }
 
-var timeout = setInterval(function() { 
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    balls.forEach(
-        function (ball) {
-            ball.move();
-        }
-    );
-    balls.forEach(
-        function (ball) {
-            ball.draw(ctx);
-        }
-    );
-}, 20);
+start();
