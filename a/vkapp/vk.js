@@ -23,7 +23,7 @@ Ball.prototype.move = function () {
 
 Ball.prototype.draw = function (ctx) {
     ctx.beginPath();
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 2;
     ctx.strokeStyle = this.color;
     ctx.arc(this.x, this.y, this.R, 0, 2 * Math.PI, false);
     ctx.stroke();
