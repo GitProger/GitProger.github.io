@@ -53,7 +53,7 @@ function start() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     var balls = [];
-    var cnt = 10 + rand(91);
+    var cnt = 1;//0 + rand(91);
     for (var i = 0; i < cnt; i++) {
         var b = new Ball(canvas, 10 + rand(11));
         balls.push(b);
@@ -63,9 +63,24 @@ function start() {
         removeBall(canvas, e, balls);
     });
 
-    setInterval(function() { 
+    canvas.addEventListener("mousemove", function(e) {
+        removeBall(canvas, e, balls);
+    });
+
+
+    var iters = 0;
+    var timeout = setInterval(function() {
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        if (balls.length === 0) {
+            var t = "Your score: " + String(Math.ceil(iters * 0.02)) + " seconds.";
+            ctx.font = "30px Comic Sans MS";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.fillText(t, canvas.width / 2, canvas.height / 2);
+            iters--;
+        }
+        iters++;
         balls.forEach(
             function (ball) {
                 ball.move();
