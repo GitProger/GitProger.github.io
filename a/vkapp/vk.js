@@ -43,13 +43,6 @@ Ball.prototype.checkCollision = function (balls, current) {
         var dx = this.x + this.vx - ball.x - ball.vx;
         var dy = this.y + this.vy - ball.y - ball.vy;
         if (dx * dx + dy * dy <= (this.R + ball.R) ** 2) {                        
-            // this - ball 1
-            // ball - ball 2
-//            var theta1 = Math.atan2(this.vy, this.vx);
-//            var theta2 = Math.atan2(ball.vy, ball.vx);
-//            var v1 = Math.sqrt(this.vx ** 2 + this.vy ** 2);
-//            var v2 = Math.sqrt(ball.vx ** 2 + ball.vy ** 2);
-
             var a = this.vx;
             var b = this.vy;
             this.vx = ball.vx;
@@ -68,13 +61,25 @@ function start(
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     var balls = [];
-    var cnt = 10 + rand(41);
+    var cnt = 10 + rand(61); // from 10 to 70 balls
     for (var i = 0; i < cnt; i++) {
         var b = new Ball(canvas, 10 + rand(11));
         balls.push(b);
     }
 
-    var bubbles = []; //bubbles
+    // check that there are not 2 balls nearby
+    for (var i = 0; i < balls.length; i++) 
+        for (var j = i + 1; j < balls.length; j++) {
+            var dx = balls[i].x - balls[j].x;
+            var dy = balls[i].y - balls[j].y;
+            if (dx * dx + dy * dy <= (balls[i].R + balls[j].R) ** 2) {
+                balls.splice(j, 1);
+                j--;
+			}
+        }
+    //
+    
+    var bubbles = []; // bubbles that appers when a ball burtss
     function removeBall(event) {
         var rect = canvas.getBoundingClientRect();
         var x = event.clientX - rect.left;
