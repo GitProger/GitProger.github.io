@@ -68,7 +68,7 @@ function start(
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     var balls = [];
-    var cnt = 10 + rand(91);
+    var cnt = 10 + rand(41);
     for (var i = 0; i < cnt; i++) {
         var b = new Ball(canvas, 10 + rand(11));
         balls.push(b);
