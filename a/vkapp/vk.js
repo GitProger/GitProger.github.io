@@ -57,7 +57,7 @@ Ball.prototype.checkCollision = function (balls, current) {
             this.vy = ball.vy;
             ball.vy = b;           
         }
-	}
+    }
 }
 
 function start(
