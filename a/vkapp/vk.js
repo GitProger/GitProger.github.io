@@ -12,12 +12,19 @@ var Ball = function (canvas, r) {
     this.color = ["red", "blue", "green", "yellow"][rand(4)];
 }
 
+Ball.prototype.okX = function () {
+    return (this.x + this.vx > this.R && this.x + this.vx < this.canvas.width - this.R);
+}
+Ball.prototype.okY = function () {
+    return (this.y + this.vy > this.R && this.y + this.vy < this.canvas.height - this.R);
+}
+
 Ball.prototype.move = function () {
     this.x += this.vx;
     this.y += this.vy;
-    if (this.x - this.R <= 0 || this.x + this.R >= this.canvas.width)
+    if (!this.okX())
         this.vx *= -1;
-    if (this.y - this.R <= 0 || this.y + this.R >= this.canvas.height)
+    if (!this.okY())
         this.vy *= -1;
 }
 
@@ -25,9 +32,32 @@ Ball.prototype.draw = function (ctx) {
     ctx.beginPath();
     ctx.lineWidth = 2;
     ctx.strokeStyle = this.color;
-    ctx.arc(this.x, this.y, this.R, 0, 2 * Math.PI, false);
+    ctx.arc(Math.round(this.x), Math.round(this.y), this.R, 0, 2 * Math.PI, false);
     ctx.stroke();
     ctx.closePath();
+}
+
+Ball.prototype.checkCollision = function (balls, current) {
+    for (var i = current + 1; i < balls.length; i++) {
+        var ball = balls[i];
+        var dx = this.x + this.vx - ball.x - ball.vx;
+        var dy = this.y + this.vy - ball.y - ball.vy;
+        if (dx * dx + dy * dy <= (this.R + ball.R) ** 2) {                        
+            // this - ball 1
+            // ball - ball 2
+//            var theta1 = Math.atan2(this.vy, this.vx);
+//            var theta2 = Math.atan2(ball.vy, ball.vx);
+//            var v1 = Math.sqrt(this.vx ** 2 + this.vy ** 2);
+//            var v2 = Math.sqrt(ball.vx ** 2 + ball.vy ** 2);
+
+            var a = this.vx;
+            var b = this.vy;
+            this.vx = ball.vx;
+            ball.vx = a;
+            this.vy = ball.vy;
+            ball.vy = b;           
+        }
+	}
 }
 
 function start(
@@ -66,7 +96,7 @@ function start(
     });
 
     var iters = 0;
-    var timeout = setInterval(function() {
+    var timeout = setInterval(function() {		
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         if (balls.length === 0) {
@@ -78,16 +108,15 @@ function start(
             iters--;
         }
         iters++;
-        balls.forEach(
-            function (ball) {
-                ball.move();
-            }
-        );
-        balls.forEach(
-            function (ball) {
-                ball.draw(ctx);
-            }
-        );
+
+        for (var i = 0; i < balls.length; i++)
+            balls[i].checkCollision(balls, i);
+        balls.forEach(function (ball) {
+            ball.move();
+        });
+        balls.forEach(function (ball) {
+            ball.draw(ctx);
+        });
 
         (function __proccess() { // bubbles
             ctx.beginPath();
