@@ -30,26 +30,8 @@ Ball.prototype.draw = function (ctx) {
     ctx.closePath();
 }
 
-
-
-function removeBall(canvas, event, balls) {
-    var rect = canvas.getBoundingClientRect();
-    var x = event.clientX - rect.left;
-    var y = event.clientY - rect.top;
-    for (var i = 0; i < balls.length; i++) {
-        var dx = Math.abs(x - balls[i].x);
-        var dy = Math.abs(y - balls[i].y);
-        var dist = Math.sqrt(dx * dx + dy * dy)
-        if (dist <= balls[i].R) {
-            balls.splice(i, 1);
-            break;
-        }
-    }
-}
-
 function start(
              params = ["mousedown", "mousemove"] /* mobile optimal */
-             /* ["mousedown"] -- for desktop */
          ) {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -62,10 +44,25 @@ function start(
         balls.push(b);
     }
 
+    var bubbles = []; //bubbles
+    function removeBall(event) {
+        var rect = canvas.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        for (var i = 0; i < balls.length; i++) {
+            var dx = Math.abs(x - balls[i].x);
+            var dy = Math.abs(y - balls[i].y);
+            if (dx * dx + dy * dy <= balls[i].R * balls[i].R) {
+                var bubble = {x: balls[i].x, y: balls[i].y, R: balls[i].R}; // bubbles
+                bubbles.push(bubble); // bubbles
+                balls.splice(i, 1);
+                break;
+            }
+        }
+    }
+
     params.forEach(function (react) {
-        canvas.addEventListener(react, function(e) {
-            removeBall(canvas, e, balls);
-        });
+        canvas.addEventListener(react, removeBall);
     });
 
     var iters = 0;
@@ -91,5 +88,32 @@ function start(
                 ball.draw(ctx);
             }
         );
+
+        (function __proccess() { // bubbles
+            ctx.beginPath();
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = "white";
+            for (var i = 0; i < bubbles.length; i++) {
+                if (bubbles[i].R <= 0) {
+                    bubbles.splice(i, 1);
+                    i--;
+                    continue;
+                }
+                for (
+                    var x = bubbles[i].x - bubbles[i].R;
+                    x <= bubbles[i].x + bubbles[i].R;
+                    x += 1 + rand(20)
+                )
+                    for (
+                        var y = bubbles[i].y - bubbles[i].R;
+                        y <= bubbles[i].y + bubbles[i].R;
+                        y += 1 + rand(20)
+                    )
+                        ctx.arc(x, y, rand(bubbles[i].R), 0, 2 * Math.PI, false);
+                bubbles[i].R -= 2;
+            }
+            ctx.stroke();
+            ctx.closePath();
+        })();
     }, 20);
 }
