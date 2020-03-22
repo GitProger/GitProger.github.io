@@ -54,7 +54,7 @@ Ball.prototype.checkCollision = function (balls, current) {
 }
 
 function start(
-             params = ["mousedown", "mousemove"] /* mobile optimal */
+             params = ["mousedown", "mousemove",  "touchstart", "touchend", "touchmove"]
          ) {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
