@@ -138,12 +138,12 @@ function start(params = [
                 for (
                     var x = bubbles[i].x - bubbles[i].R;
                     x <= bubbles[i].x + bubbles[i].R;
-                    x += 1 + rand(20)
+                    x += 1 + rand(2 * bubbles[i].R)
                 )
                     for (
                         var y = bubbles[i].y - bubbles[i].R;
                         y <= bubbles[i].y + bubbles[i].R;
-                        y += 1 + rand(20)
+                        y += 1 + rand(2 * bubbles[i].R)
                     )
                         ctx.arc(x, y, rand(bubbles[i].R), 0, 2 * Math.PI, false);
                 bubbles[i].R -= 2;
