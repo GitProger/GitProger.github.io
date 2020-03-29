@@ -7,16 +7,17 @@
         <script src="/profiles.js"></script>        
         <script>
             function td_quote(t) {
-                return "<td>" + t + "</td>";
+                return t;//"<td>" + t + "</td>";
             }
             window.onload = function() {
                 document.body.innerHTML += "<br>"
                 document.body.innerHTML += "<center>"
                 document.body.innerHTML += "<table>";
                 document.body.innerHTML += "<tr>";
-                document.body.innerHTML += td_quote(getCode(twitter));
-                document.body.innerHTML += td_quote(getCode(vk));
                 document.body.innerHTML += td_quote(getCode(github));
+                document.body.innerHTML += td_quote(getCode(vk));
+                document.body.innerHTML += td_quote(getCode(twitter));
+                document.body.innerHTML += td_quote(getCode(facebook));
                 document.body.innerHTML += "</tr>";
                 document.body.innerHTML += "</table>";                
                 document.body.innerHTML += "</center>"
