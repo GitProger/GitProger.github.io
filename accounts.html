@@ -5,25 +5,34 @@
         <link href="theme.css" rel="stylesheet">
         <script src="/draw_account.js"></script>
         <script src="/profiles.js"></script>        
-        <script>
-            function td_quote(t) {
-                return t;//"<td>" + t + "</td>";
+        <style>
+            table.main {
+                border-spacing: 15px;
+                margin-left: auto;
+                margin-right: auto;
             }
+            table { 
+                background: #aaa;
+            }
+        </style>
+        <script>
             window.onload = function() {
-                document.body.innerHTML += "<br>"
-                document.body.innerHTML += "<center>"
-                document.body.innerHTML += "<table>";
-                document.body.innerHTML += "<tr>";
-                document.body.innerHTML += td_quote(getCode(github));
-                document.body.innerHTML += td_quote(getCode(vk));
-                document.body.innerHTML += td_quote(getCode(twitter));
-                document.body.innerHTML += td_quote(getCode(facebook));
-                document.body.innerHTML += "</tr>";
-                document.body.innerHTML += "</table>";                
-                document.body.innerHTML += "</center>"
+                var e = document.getElementById("profiles")
+                e.innerHTML += "<tr><td>";
+                e.body.innerHTML += td_quote(getCode(github));
+                e.innerHTML += td_quote(getCode(vk));
+                e.innerHTML += td_quote(getCode(twitter));
+                e.innerHTML += td_quote(getCode(facebook));
+                e.innerHTML += "</td></tr>";
             }
         </script>
     </head>
     <body>
+        <br>
+        <center>
+            <table id="profiles" class="main vcard">
+                
+            </table>
+        </center>            
     </body>
 </html>
