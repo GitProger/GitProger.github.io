@@ -18,3 +18,8 @@ github = {
     link: "https://github.com/GitProger",
 };
 
+facebook = {
+    name: "facebook.com",
+    site: "https://facebook.com/",
+    link: "https://www.facebook.com/profile.php?id=100049113921229",
+};
