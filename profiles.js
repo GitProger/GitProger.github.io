@@ -1,4 +1,12 @@
-/// My accounts on different sites
+function getCode(pro) {
+     var code = "";
+     code += "<a href=\"" + pro.link + "\" class=\"darklink\">";
+     code += "<img class=\"favicon withtext\" alt=\"\" title=\"\" src=";
+     code += "\"http://www.google.com/s2/favicons?domain=" + pro.site;
+     code += "\" />" + pro.name + "</a><br />";
+     return code;
+}
+
 
 twitter = {
     name: "twitter.com",
