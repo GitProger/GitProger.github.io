@@ -13,10 +13,9 @@
             window.onload = function() {
                 var e = document.getElementById("profiles")
                 e.innerHTML += "<tr><td>";
-                e.innerHTML += getCode( github   );
-                e.innerHTML += getCode( vk       );
-                e.innerHTML += getCode( twitter  );
-                e.innerHTML += getCode( facebook );
+                profiles.forEach(function (profile) {            
+                    e.innerHTML += getCode(profile);
+                });
                 e.innerHTML += "</td></tr>";
             }
         </script>
