@@ -9,13 +9,15 @@ darkgray {
 body {
     background: #333;
     color: #999;
+
+    font-family: "sans-serif";
 }
 
 hr {
     color: #444;
-      background-color: #333;
-      height: 2px;
-      border: none;
+    background-color: #333;
+    height: 2px;
+    border: none;
 }
 
 
