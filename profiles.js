@@ -1,7 +1,7 @@
 profiles = [{
         name: "vk.com",
         site: "https://vk.com/",
-        link: "https://vk.com/1ksta",
+        link: "https://vk.com/", // fsb
     }, {
         name: "github.com",
         site: "https://github.com/",
