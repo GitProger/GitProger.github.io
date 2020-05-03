@@ -1,26 +1,25 @@
-var types = {
-    "У": 1, // Учебник
-    "Д": 2, // Диск или Группа
-};
-
-var subjects = {
-    "Алгебра"     : 1,
-    "Геометрия"   : 2,
-    "Физика"      : 3,
-    "Химия"       : 4,
-    "Русский"     : 5,
-    "Литература"  : 6,
-    "История"     : 7,
-    "Информатика" : 8,
-    "География"   : 9,
-    "Биология"    : 10,
-    "Английский"  : 11,
-};
-
+/**
+Типы:
+    У - Учебник
+    Д - Диск или Группа
+Предметы:
+    Алгебра
+    Геометрия
+    Физика
+    Химия
+    Русский
+    Литература
+    История
+    Информатика
+    География
+    Биология
+    Английский
+*/
+    
 function Item(type, sub, ex, link) {
     return {
-        "type": types[type],
-        "subject": subjects[sub],
+        "type": type,
+        "subject": sub,
         "link": link,
         "explan": ex,
     };
@@ -41,10 +40,10 @@ function upd() {
     var by = e.value;
     items.sort((a, b) => a[by] > b[by] ? 1 : -1);
     var prev = "";
-
+    list.innerHTML = "";
     for (var i = 0; i < items.length; i++) {
         var cur = items[i];
-        if (prev !== cur)
+        if (prev[by] !== cur[by])
             list.innerHTML += "<hr>" + cur[by];
         var code = "<a href=\"" + cur.link + "\">" + cur.explan + "</a>";
         list.innerHTML += code + "<br>";
