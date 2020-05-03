@@ -35,7 +35,7 @@ var items = [
 ];
 
 
-function updateList() {
+function upd() {
     var e = document.getElementById("sortby");
     var list = document.getElementById("list");
     var by = e.value;
