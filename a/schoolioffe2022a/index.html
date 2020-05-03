@@ -2,15 +2,16 @@
 <html>
     <head>
         <title> Список учебных ссылок </title>
-        <script type="text/javascript" src="main.js"></script>
+        <script src="main.js"></script>
     </head>
     <body>
         Сортировать по:
-        <select id=sortby onchange=updateList()>
+        <select id=sortby onchange=upd()>
             <option value="_"> </option>
             <option value="type"> Типу материала </option>
             <option value="subject"> Предмету    </option>
         </select>
+        <br>
         <div id="list">
             
         </div>
