@@ -5,9 +5,11 @@
         <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
-        <select id=sortby>
-            <option value="type"> Тип материала </option>
-            <option value="subject"> Предмет    </option>
+        Сортировать по:
+        <select id=sortby onchange=updateList()>
+            <option value="_"> </option>
+            <option value="type"> Типу материала </option>
+            <option value="subject"> Предмету    </option>
         </select>
         <div id="list">
             
