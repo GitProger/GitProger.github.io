@@ -44,7 +44,7 @@ function upd() {
     for (var i = 0; i < items.length; i++) {
         var cur = items[i];
         if (prev[by] !== cur[by])
-            list.innerHTML += "<hr>" + cur[by];
+            list.innerHTML += "<hr color=white>" + cur[by] + "<br>";
         var code = "<a href=\"" + cur.link + "\">" + cur.explan + "</a>";
         list.innerHTML += code + "<br>";
         prev = items[i];
