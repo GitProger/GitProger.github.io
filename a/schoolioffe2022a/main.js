@@ -51,4 +51,5 @@ function upd() {
     }
 }
 
+window.onload = upd;
 
