@@ -3,36 +3,36 @@
         "type":    "Д",
         "subject": "Геометрия",
         "link":    "https://docs.google.com/spreadsheets/d/10pc-xpPX8pCG4Zc_dV3GxifS6GLyIk9QZcdJPiD_DKU/edit",
-        "explan":  "Табличка по геометрии",
+        "explan":  "Табличка по геометрии"
     },
     {
         "type":    "Д",
         "subject": "Алгебра",
         "link":    "https://drive.google.com/drive/folders/1RsM5lHj_W4zYEGM4VhNTKf-FQYbmVo1f",
-        "explan":  "Диск алгебры",
+        "explan":  "Диск алгебры"
     },
     {
         "type":    "Д",
         "subject": "Физика",
         "link":    "https://vk.com/club193706921",
-        "explan":  "Группа физики",
+        "explan":  "Группа физики"
     },
     {
-        "type":    "Д",
+        "type":    "У",
         "subject": "История",
         "link":    "http://www.belgtis.ru/images/obuch/pm/IstoriyaRossiiimirasdrevnejshihvremendokoncaXIXvekaklassZagladinNVidr.pdf",
-        "explan":  "Учебник по истории",
+        "explan":  "Учебник по истории"
     },
     {
         "type":    "У",
         "subject": "Химия",  
         "link":    "https://vk.com/doc572297054_543760232?hash=cd65ebfda1a3c873d4&dl=a22a98f48ac93d1ab9",
-        "explan":  "Задачник по химии",
+        "explan":  "Задачник по химии"
     },
     {
         "type":    "Д",
         "subject": "Русский",  
         "link":    "https://padlet.com/lossanna/23cyzqce6i4ibcwl",
-        "explan":  "Доска",
-    },
+        "explan":  "Доска"
+    }
 ]
