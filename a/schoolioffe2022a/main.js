@@ -31,6 +31,7 @@ var items = [
     Item("Д", "Физика", "Группа физики",            "https://vk.com/club193706921"),
     Item("У", "История", "Учебник по истории",      "http://www.belgtis.ru/images/obuch/pm/IstoriyaRossiiimirasdrevnejshihvremendokoncaXIXvekaklassZagladinNVidr.pdf"),
     Item("У", "Химия", "Задачник по химии",         "https://vk.com/doc572297054_543760232?hash=cd65ebfda1a3c873d4&dl=a22a98f48ac93d1ab9"),
+    Item("Д", "Русский", "Доска",         "https://padlet.com/lossanna/23cyzqce6i4ibcwl"),
 ];
 
 
