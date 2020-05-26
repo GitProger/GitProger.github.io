@@ -24,20 +24,19 @@ window.onload = function () {
     req.open('GET', db_url);
     req.onreadystatechange = function (e) {
         if (this.readyState == 4) {
-            if (this.status == 200)
+            if (this.status == 200) {
                 items = JSON.parse(this.responseText);
-            else
+                if (location.hash !== "") {
+                    items.forEach(function (e) {
+                        if (e.id === location.hash) {
+                            document.location = e.link;
+                        }
+                    });
+                }    
+                update();
+            } else
                 alert("Load error. Restart the page.");
         }
     }
     req.send();
-    if (location.hash !== "") {
-        items.forEach(function (e) {
-            if (e.id === location.hash) {
-                document.location = e.link;
-            }
-        });
-    }
-    
-    update();
 }
