@@ -3,12 +3,12 @@ darkgray {
 }
 
 .darklink {
-    color: #999;
+    color: #aaa;
 }
 
 body {
     background: #333;
-    color: #999;
+    color: #aaa;
 
     font-family: "sans-serif";
 }
