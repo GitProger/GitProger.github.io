@@ -31,5 +31,13 @@ window.onload = function () {
         }
     }
     req.send();
+    if (location.hash !== "") {
+        items.forEach(function (e) {
+            if (e.id === location.hash) {
+                document.location = e.link;
+            }
+        });
+    }
+    
     update();
 }
