@@ -1,5 +1,5 @@
 
-var items;
+var items = [];
 const db_url = 'https://gitproger.github.io/a/schoolioffe2022a/db.json';
 var req = new XMLHttpRequest();
 req.open('GET', db_url);
@@ -30,4 +30,4 @@ function update() {
     }
 }
 
-update();
+window.onload = update;
