@@ -15,9 +15,9 @@
     Биология
     Английский
 */
+var items;
 
-function update(items) {
-    return function () {
+function update() {
         var e = document.getElementById("sortby");
         var list = document.getElementById("list");
         var by = e.value;
@@ -35,21 +35,17 @@ function update(items) {
     }
 }
 
-function upd() {}
+const db_url = 'https://gitproger.github.io/a/schoolioffe2022a/db.json';
 
-window.onload = function () {
-    var items;
-    var req = new XMLHttpRequest();
-    req.open('GET', 'db.json');
-    req.onreadystatechange = function (e) {
-        if (this.readyState == 4) {
-            if (this.status == 200)
-                items = JSON.parse(this.responseText);
-            else
-                document.location = document.location;
-        }
+var req = new XMLHttpRequest();
+req.open('GET', db_url);
+req.onreadystatechange = function (e) {
+    if (this.readyState == 4) {
+        if (this.status == 200)
+            items = JSON.parse(this.responseText);
+        else
+            alert("Load error. Restart the page.");
     }
-    req.send(null);
-    upd = update(items)
-    upd();
 }
+req.send();
+update();
