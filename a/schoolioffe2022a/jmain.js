@@ -47,4 +47,5 @@ req.onreadystatechange = function (e) {
     }
 }
 req.send();
-update();
+
+document.onreadystatechange = update;
