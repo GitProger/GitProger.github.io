@@ -1,20 +1,17 @@
-/**
-Типы:
-    У - Учебник
-    Д - Диск или Группа
-Предметы:
-    Алгебра
-    Геометрия
-    Физика
-    Химия
-    Русский
-    Литература
-    История
-    Информатика
-    География
-    Биология
-    Английский
-*/
+
+var items;
+const db_url = 'https://gitproger.github.io/a/schoolioffe2022a/db.json';
+var req = new XMLHttpRequest();
+req.open('GET', db_url);
+req.onreadystatechange = function (e) {
+    if (this.readyState == 4) {
+        if (this.status == 200)
+            items = JSON.parse(this.responseText);
+        else
+            alert("Load error. Restart the page.");
+    }
+}
+req.send();
 
 function update() {
     var e = document.getElementById("sortby");
@@ -33,17 +30,4 @@ function update() {
     }
 }
 
-var items;
-const db_url = 'https://gitproger.github.io/a/schoolioffe2022a/db.json';
-var req = new XMLHttpRequest();
-req.open('GET', db_url);
-req.onreadystatechange = function (e) {
-    if (this.readyState == 4) {
-        if (this.status == 200)
-            items = JSON.parse(this.responseText);
-        else
-            alert("Load error. Restart the page.");
-    }
-}
-req.send();
 update();
