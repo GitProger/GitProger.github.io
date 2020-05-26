@@ -1,18 +1,18 @@
 a { 
-    color: #999;
+    color: #aaa;
 }
 body {
     background: #333;
-    color: #999;
+    color: #aaa;
     font-family: "sans-serif";
 }
 hr {
-    color: #999;
-    background-color: #999;
+    color: #aaa;
+    background-color: #aaa;
     height: 2px;
     border: none;
 }
 select {
-    color: #999;
+    color: #aaa;
     background-color: #333;
 }
