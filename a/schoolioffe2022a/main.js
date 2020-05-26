@@ -32,6 +32,7 @@ var items = [
     Item("У", "История", "Учебник по истории",      "http://www.belgtis.ru/images/obuch/pm/IstoriyaRossiiimirasdrevnejshihvremendokoncaXIXvekaklassZagladinNVidr.pdf"),
     Item("У", "Химия", "Задачник по химии",         "https://vk.com/doc572297054_543760232?hash=cd65ebfda1a3c873d4&dl=a22a98f48ac93d1ab9"),
     Item("Д", "Русский", "Доска",         "https://padlet.com/lossanna/23cyzqce6i4ibcwl"),
+    Item("Д", "Геометрия", "Гугл-класс экзамена по геометрии", "https://classroom.google.com/c/MTA1OTk3MjI5NDA1"),
 ];
 
 
