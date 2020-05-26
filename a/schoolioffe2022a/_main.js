@@ -18,20 +18,19 @@
 var items;
 
 function update() {
-        var e = document.getElementById("sortby");
-        var list = document.getElementById("list");
-        var by = e.value;
-        items.sort((a, b) => a[by] > b[by] ? 1 : -1);
-        var prev = "";
-        list.innerHTML = "";
-        for (var i = 0; i < items.length; i++) {
-           var cur = items[i];
-            if (prev[by] !== cur[by])
-                list.innerHTML += "<hr>" + cur[by] + "<br>";
-            var code = "<a href=\"" + cur.link + "\">" + cur.explan + "</a>";
-            list.innerHTML += code + "<br>";
-            prev = items[i];
-        }
+    var e = document.getElementById("sortby");
+    var list = document.getElementById("list");
+    var by = e.value;
+    items.sort((a, b) => a[by] > b[by] ? 1 : -1);
+    var prev = "";
+    list.innerHTML = "";
+    for (var i = 0; i < items.length; i++) {
+        var cur = items[i];
+        if (prev[by] !== cur[by])
+            list.innerHTML += "<hr>" + cur[by] + "<br>";
+        var code = "<a href=\"" + cur.link + "\">" + cur.explan + "</a>";
+        list.innerHTML += code + "<br>";
+        prev = items[i];
     }
 }
 
