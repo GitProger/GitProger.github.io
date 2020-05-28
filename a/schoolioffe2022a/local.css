@@ -1,18 +1,9 @@
-a { 
+select, body, a {
     color: #aaa;
-}
-body {
     background: #333;
-    color: #aaa;
-    font-family: "sans-serif";
 }
 hr {
-    color: #aaa;
-    background-color: #aaa;
+    background: #aaa;
     height: 2px;
     border: none;
-}
-select {
-    color: #aaa;
-    background-color: #333;
 }
