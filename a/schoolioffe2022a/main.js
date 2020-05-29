@@ -17,6 +17,7 @@ function update() {
         list.innerHTML += code + "<br>";
         prev = items[i];
     }
+    document.getElementById("man").hidden = (by !== "type");
 }
 
 window.onload = function () {
