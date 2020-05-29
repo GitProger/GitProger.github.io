@@ -18,6 +18,7 @@ function update() {
         prev = items[i];
     }
     document.getElementById("man").hidden = (by !== "type");
+    document.getElementById("sep").hidden = (by === "type");
 }
 
 window.onload = function () {
