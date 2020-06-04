@@ -48,5 +48,11 @@
         "link":    "https://drive.google.com/drive/folders/16zgQxvYxDmYev_SxOieZ-JqDKwapv9wy",
         "explan":  "Заборчик выпускников",
         "id": "#8"
+    }, {
+        "type":    "",
+        "subject": "Развлечения",
+        "link":    "https://gitproger.github.io/a/schoolioffe2022a/game/",
+        "explan":  "Финальная игра",
+        "id": "#9"
     }
 ]
