@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Game </title>
+        <meta name="viewport" content="width=700px, user-scalable=no">
+        <script src="/jquery-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+        <style>
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden;
+            }
+        </style>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <canvas height="470" width="700" id="canvas"></canvas>
+        <script>
+            window.onload = function () {
+                var canvas = document.getElementById("canvas");
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                start();
+            }
+        </script>
+    </body>
+</html>
