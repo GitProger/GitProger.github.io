@@ -87,16 +87,26 @@ function start() {
             gen = 0;
         }
 
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "black"; // background
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath(); // border
+        ctx.moveTo(OFFSET, 0);
+        ctx.lineTo(OFFSET, canvas.height);
+        ctx.moveTo(OFFSET + SIZE * WIDTH, 0);
+        ctx.lineTo(OFFSET + SIZE * WIDTH, canvas.height);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#ffffff";
+        ctx.stroke();
 
         all.forEach(function (e) {
             e.move();
             e.draw();
         });
 
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "red"; // player
         ctx.fillRect(OFFSET + mX * WIDTH + 5, window.innerHeight - HEIGHT / 2, WIDTH - 10, HEIGHT / 2);
+
 
 
         all.forEach(function (e) {
