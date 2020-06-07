@@ -125,8 +125,9 @@ function start() {
                 all.splice(i, 1);
                 i--;
                 count++;
-                setScore(count);
             }
         }
+        if (count > getScore())
+            setScore(count);
     }, dt);
 }
