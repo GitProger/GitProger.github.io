@@ -28,13 +28,12 @@ window.onload = function () {
         if (this.readyState == 4) {
             if (this.status == 200) {
                 items = JSON.parse(this.responseText);
-                if (location.hash !== "") {
-                    items.forEach(function (e) {
-                        if (e.id === location.hash) {
-                            document.location = e.link;
-                        }
-                    });
-                }    
+                items.sort((a, b) => a.id > b.id ? 1 : -1);
+                var re = location.hash.match(/#(\d+)/);
+                if (re) { // all ids from 1 to x
+                    var x = Number(re[1]) - 1;
+                    document.location = items[x].link;
+                }
                 update();
             } else
                 alert("Load error. Restart the page.");
