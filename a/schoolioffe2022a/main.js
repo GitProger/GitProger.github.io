@@ -1,12 +1,18 @@
 
 var items = [];
-const db_url = 'https://gitproger.github.io/a/schoolioffe2022a/db.json';
+const db_url = 'db.json';
 
 function update() {
     var e = document.getElementById("sortby");
     var list = document.getElementById("list");
+    document.getElementById("man").hidden = (by !== "type");
+    document.getElementById("sep").hidden = (by === "type");
     var by = e.value;
-    items.sort((a, b) => a[by] > b[by] ? 1 : -1);
+    if (by !== "")
+        items.sort((a, b) => a[by] > b[by] ? 1 : -1);
+    else
+        items.sort((a, b) => a.id > b.id ? 1 : -1);
+    
     var prev = "";
     list.innerHTML = "";
     for (var i = 0; i < items.length; i++) {
@@ -17,26 +23,19 @@ function update() {
         list.innerHTML += code + "<br>";
         prev = items[i];
     }
-    document.getElementById("man").hidden = (by !== "type");
-    document.getElementById("sep").hidden = (by === "type");
 }
 
 window.onload = function () {
     var req = new XMLHttpRequest();
     req.open('GET', db_url);
     req.onreadystatechange = function (e) {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                items = JSON.parse(this.responseText);
-                items.sort((a, b) => a.id > b.id ? 1 : -1);
-                var re = location.hash.match(/#(\d+)/);
-                if (re) { // all ids from 1 to x
-                    var x = Number(re[1]) - 1;
-                    document.location = items[x].link;
-                }
-                update();
-            } else
-                alert("Load error. Restart the page.");
+        if (this.readyState == 4 && this.status == 200) {
+            items = JSON.parse(this.responseText);
+            items.sort((a, b) => a.id > b.id ? 1 : -1);
+            var re = location.hash.match(/#(\d+)/);
+            if (re)
+                document.location = items[Number(re[1]) - 1].link;
+            update();
         }
     }
     req.send();
