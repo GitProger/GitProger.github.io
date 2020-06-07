@@ -54,5 +54,11 @@
         "link":    "https://gitproger.github.io/a/schoolioffe2022a/game/",
         "explan":  "Финальная игра",
         "id": "#9"
+    }, {
+        "type":    "У",
+        "subject": "Литература",
+        "link":    "list.html",
+        "explan":  "Список летнего чтения",
+        "id": "#10"
     }
 ]
