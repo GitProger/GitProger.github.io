@@ -16,7 +16,7 @@ function simpleRand(k) {
 function getScore() {
     var r = window.localStorage.getItem("high");
     if (r === null) { r = 0; }
-    return r;
+    return Number(r);
 }
 function setScore(s) {
     window.localStorage.setItem("high", s);
