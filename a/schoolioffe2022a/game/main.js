@@ -119,7 +119,7 @@ function start() {
                 alert("Game over. Score: " + count + ", High score: " + getScore());
             }
         });
-        
+
         for (var i = 0; i < all.length; i++) {
             if (all[i].y * HEIGHT >= window.innerHeight) {
                 all.splice(i, 1);
