@@ -60,5 +60,11 @@
         "link":    "list.html",
         "explan":  "Список летнего чтения",
         "id": 10
+    }, {
+        "type":    "У",
+        "subject": "Химия",
+        "link":    "https://vk.com/doc271823201_569859343?hash=ae8aec7277c6dceff7&dl=be83de3fb2d69561fd",
+        "explan":  "Задачник по химии (10кл.)",
+        "id": 11
     }
 ]
