@@ -4,10 +4,10 @@ const db_url = 'db.json';
 
 function update() {
     var e = document.getElementById("sortby");
+    var by = e.value;
     var list = document.getElementById("list");
     document.getElementById("man").hidden = (by !== "type");
     document.getElementById("sep").hidden = (by === "type");
-    var by = e.value;
     if (by !== "")
         items.sort((a, b) => a[by] > b[by] ? 1 : -1);
     else
