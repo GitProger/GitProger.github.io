@@ -1,0 +1,25 @@
+{
+    "title": "Заголовок 1",
+    "content": "",
+    "children": [
+        {
+            "title": "Заголовок 2",
+            "content": "Текст",
+            "children": []
+        }, {
+            "title": "Заголовок 2",
+            "content": "",
+            "children": [
+                {
+                    "title": "Заголовок 3",
+                    "content": "Текст",
+                    "children": []
+                }, {
+                    "title": "Заголовок 3",
+                    "content": "Текст",
+                    "children": []
+                }
+            ]
+        }
+    ]
+}

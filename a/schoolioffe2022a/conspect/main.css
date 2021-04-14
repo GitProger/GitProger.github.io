@@ -1,0 +1,13 @@
+ul {
+    list-style-image: url('default.png');
+}
+
+ul .expanded {
+    list-style-image: url('expanded.png');
+}
+
+.lst:hover {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
